@@ -5,19 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class SpaceProvider extends ChangeNotifier {
-
   //! function untuk menfetching data
   //! typenya asyncronous
   getRecommendedSpaces() async {
-    
     //! variabel untuk menmpilkan hasil dari request htpp atau api
-    var result =
-        await http.get('http://bwa-cozy.herokuapp.com/recommended-spaces');
-
-    //! mencetak apakah nilai statusCode result 200 atau tidak 
+    var result = await http
+        .get(Uri.parse("http://bwa-cozy.herokuapp.com/recommended-spaces"));
+    //! mencetak apakah nilai statusCode result 200 atau tidak
     //! jika 200 maka url tidak error
     print(result.statusCode);
-    
+
     //! mencetak  nilai body result atau semua data pada http
     print(result.body);
 

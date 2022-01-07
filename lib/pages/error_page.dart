@@ -40,16 +40,18 @@ class ErrorPage extends StatelessWidget {
               Container(
                 width: 210,
                 height: 50,
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(builder: (context) => HomePage()),
                         (route) => false);
                   },
-                  color: purpleColor,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(17)),
+                  style: ElevatedButton.styleFrom(
+                    primary: purpleColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(17)),
+                  ),
                   child: Text(
                     'Back To Home',
                     style: whiteTextStyle.copyWith(fontSize: 18),
